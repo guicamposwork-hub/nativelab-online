@@ -18,5 +18,6 @@ git add -A
 git diff --cached --quiet
 if ($LASTEXITCODE -eq 0) { Write-Host "Nada mudou. Nada a publicar."; exit 0 }
 git commit -m $Mensagem
+git pull --rebase -q   # o GitHub às vezes grava o CNAME sozinho
 git push
 Write-Host "Publicado. Em 1 a 2 minutos estará em https://nativelab.online/nativeclass/"
