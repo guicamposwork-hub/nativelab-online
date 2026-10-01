@@ -4,8 +4,7 @@
 
 /* ---------- CONFIGURAÇÃO: preencha antes de publicar ---------- */
 const CONFIG = {
-  checkout: "",        // link do checkout do gateway (vazio = os botões levam até a oferta)
-  siteNativeLab: "",   // URL do site da NativeLab (prova)
+  checkout: "https://pay.kirvano.com/18853490-2a28-4326-97cc-4f1475a59eff",   // checkout da Kirvano (vazio = os botões levam até a oferta)
   esgotado: false,     // true quando as vagas acabarem
   horaAula: 20,        // hora (Brasília) em que a aula termina na segunda: depois disso a página passa para a segunda seguinte
 
@@ -80,10 +79,6 @@ $$("[data-checkout]").forEach(a => {
     track("cta_click", { location: place });
     if (CONFIG.checkout) track("begin_checkout", { location: place, value: 9.99, currency: "BRL" }, "InitiateCheckout");
   });
-});
-$$("[data-site]").forEach(a => {
-  if (CONFIG.siteNativeLab) a.href = CONFIG.siteNativeLab;
-  else a.addEventListener("click", e => e.preventDefault());
 });
 
 /* ---------- Ticker contínuo: duplica a linha para o loop não ter emenda ---------- */

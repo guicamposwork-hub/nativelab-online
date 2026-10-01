@@ -420,6 +420,31 @@ ul { margin: 0; padding: 0; list-style: none; }
 .dock { display: none; }
 
 /* =========================================================
+   PÁGINAS LEGAIS (termos.html, privacidade.html)
+   ========================================================= */
+.legal-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+.legal-bar .link { font-size: .9375rem; }
+.legal {
+  max-width: 720px; margin: 0 auto;
+  padding: clamp(56px, 8vw, 104px) var(--gutter) clamp(72px, 9vw, 120px);
+}
+.legal h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: .98; }
+.legal-date { margin-top: 14px; color: var(--faint); font-size: .9375rem; }
+.legal > p:not(.legal-date), .legal li { color: var(--mute); font-size: 1.0625rem; line-height: 1.65; max-width: 66ch; }
+.legal > p:not(.legal-date) { margin-top: 16px; }
+.legal h2 { margin-top: 44px; font-size: 1.25rem; font-weight: 800; letter-spacing: -.02em; }
+.legal h2 + p { margin-top: 10px; }
+.legal ul { margin-top: 12px; display: grid; gap: 8px; }
+.legal li { display: flex; gap: 12px; }
+.legal li::before { content: ""; flex: none; width: 6px; height: 6px; margin-top: .7em; border-radius: 50%; background: var(--lime); }
+.legal .link { color: var(--ink); }
+.foot nav a[aria-current="page"] { color: var(--ink); }
+
+/* =========================================================
    ENTRADAS (só com JS e com movimento permitido)
    O conteúdo nasce visível; a classe m-ready só existe com JS ativo.
    ========================================================= */
