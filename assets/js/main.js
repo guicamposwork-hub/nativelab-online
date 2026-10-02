@@ -52,7 +52,7 @@ document.addEventListener("click", e => {
   const a = e.target.closest("a");
   if (!a) return;
   if (a.matches("[data-whatsapp]")) track("whatsapp_click", { location: a.closest("section,footer,div[data-sticky-cta]")?.id || "sticky" }, "Contact");
-  else if (/#contato$/.test(a.getAttribute("href") || "")) track("cta_click", { label: a.textContent.trim() });
+  else if (/cal\.com\//.test(a.getAttribute("href") || "")) track("cta_click", { label: a.textContent.trim() }, "Schedule");
 });
 
 /* ---------- Links externos ---------- */
